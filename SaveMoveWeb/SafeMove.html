@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>SafeMove</title>
+	<!-- <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=07680849c03baaf56747304ca4a5dbfd"></script> -->
+	<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=07680849c03baaf56747304ca4a5dbfd"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+	<!-- <script type="text/javascript" src="Amap.js"></script> -->
+	<link rel="stylesheet" href="Style.css">
+	</head>
+	<body>
+	<header>
+	<a id="logo" href="http://www.baidu.com"><img src="SafeMoveLogo.png" alt="logo" width="100px" height="70px"></a>
+		<nav>
+			<ul>
+				<li><a href="http://www.baidu.com">首页</a></li>
+				<li><a href="http://www.baidu.com">附近</a></li>
+				<li><a href="http://www.baidu.com">搜索</a></li>
+				<li><a href="http://www.baidu.com">我的账号</a></li>
+				<li><a href="http://www.baidu.com">联系我们</a></li>
+				<li class="invest">投资我们</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+	<aside>
+		<ul>
+			<li>附近街道</li>
+			<li>扒窃安全</li>
+			<li>抢劫安全</li>
+			<li>人身安全</li>
+			<li>重大提醒</li>
+		</ul>
+	</aside>
+	<div id="AmapContainer">
+		<script>
+    	var map = new AMap.Map('AmapContainer', {
+        resizeEnable: true,
+        zoom:11,
+        
+    });
+
+</script>
+	</div>
+	</main>	
+	</body>
+</html>
