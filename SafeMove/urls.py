@@ -20,4 +20,5 @@ from mapshow import views as mapshow_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', mapshow_views.safemap, name='safemap'),
+    url(r'^upload_event/$', mapshow_views.upload_event, name='upload_event'),
 ]
