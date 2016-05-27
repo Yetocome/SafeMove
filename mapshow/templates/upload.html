@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>upload demo</title>
+
+    <link rel="stylesheet" href="css/upload-style.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>上传安全事件</h3>
+    <h4>上传您看到或经历的安全事件</h4>
+    <fieldset>
+      <input placeholder="姓名" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="电子邮箱" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="电话号码" type="tel" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <p id="selectp">请选择案件类型：</p>
+      <select placeholder="请选择事件类型" type="select" tabindex="4" required>
+      <option class="def" value="">请选择</option>
+      <option value="">扒窃</option>
+      <option value="">抢劫</option>
+      <option value="">伤人</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="请描述您看到的情况" tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="incident-submit" data-submit="...上传中">上传</button>
+    </fieldset>
+  </form>
+
+</div>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+
+</html>
