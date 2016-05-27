@@ -13,5 +13,7 @@ class NewVisitorTest(LiveServerTestCase):
 
     def test_title_of_web(self):
         self.browser.get(self.live_server_url)
+
         self.assertIn('SafeMove', self.browser.title)
+
         self.fail('Finish the test')

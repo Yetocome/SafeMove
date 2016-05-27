@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from mapshow import views
+from mapshow import views as mapshow_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.safemap, name='safemap'),
+    url(r'^$', mapshow_views.safemap, name='safemap'),
 ]
