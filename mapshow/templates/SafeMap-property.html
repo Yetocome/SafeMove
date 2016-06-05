@@ -7,8 +7,10 @@
 	<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
     <script src="http://webapi.amap.com/maps?v=1.3&key=07680849c03baaf56747304ca4a5dbfd"></script>
     <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
-	<!-- <script type="text/javascript" src="Amap.js"></script> -->
-	<link rel="stylesheet" href="css/Style.css">
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/heatmapData.js"></script>
+	<script src="js/upload.js"></script>  
+  <link rel="stylesheet" href="css/Style.css">
+  <link rel="stylesheet" href="css/upload-style.css" media="screen" type="text/css" />>
 	</head>
 	<body>
 	<p class="warning">警告 本网站仅供项目测试使用，所有内容和数据均为虚构信息，请不要相信和传播，谢谢！</p>
@@ -16,17 +18,18 @@
 	<a id="logo" href="#"><img src="SafeMoveLogo.png" alt="logo" width="100px" height="70px"></a>
 		<nav>
 			<ul>
-				<li><a href="#">首页</a></li>
-				<li><a href="#">附近</a></li>
-				<li><a href="#">搜索</a></li>
+				<li><a href="SafeMap.html">首页</a></li>
+				<li><a href="SafeMap-safety.html">人身安全</a></li>
+				<li><a href="SafeMap-property.html">财产安全</a></li>
+				<li><a href="#">移动App</a></li>
 				<li><a href="#">我的账号</a></li>
-				<li><a href="#">联系我们</a></li>
-				<li class="invest">投资我们</li>
+				<li class="invest">联系我们</li>
 			</ul>
 		</nav>
 	</header>
 	<main>
-	<aside>
+	<!-- 这部分暂时不需要。 -->
+	<!-- <aside>
 		<ul>
 			<li>附近街道</li>
 			<li>扒窃安全</li>
@@ -34,11 +37,12 @@
 			<li>人身安全</li>
 			<li>重大提醒</li>
 		</ul>
-	</aside>
-	<div id="AmapContainer" script="AMap.js">
+	</aside> -->
+	<div class="AmapContainer" id="AmapContainer" script="js/property.js">
+	<script type="text/javascript" src="http://cache.amap.com/lbs/static/heatmapData.js"></script>
 
 <!-- circle menu -->
-		<div class="radmenu"><a href="#" class="show" >安全类型</a>
+	<!-- 	<div class="radmenu"><a href="#" class="show" >安全类型</a>
   <ul>
    <li>
       <a href="#">财产安全</a>
@@ -91,13 +95,56 @@
       </ul>
     </li>
   </ul>
-</div>
-		<div class="btn switch">
-			<span class="top content">财产安全</span>
-			<span class="bottom content">切换</span>
+</div> -->
+		<div class="btn switch" onclick="heatmap.show()">
+			<span class="top content">安全地图</span>
+			<span class="bottom content">开启</span>
 		</div>
-		<script src="Amap.js"></script>
+		<div class="btn switch" onclick="heatmap.hide()">
+			<span class="top content">普通地图</span>
+			<span class="bottom content">关闭</span>
+		</div>
+    <div class="btn switch" onclick="showUpload()">
+      <span class="top content">安全事件</span>
+      <span class="bottom content">上传</span>
+    </div>
+		<script src="js/property.js"></script>
 	</div>
 	</main>	
+  <div class="container" id="container">  
+  <form id="contact" action="" method="post">
+    <h3>上传安全事件</h3>
+    <h4>上传您看到或经历的安全事件</h4>
+    <fieldset>
+      <input placeholder="姓名" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="电子邮箱" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="电话号码" type="tel" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="地点" type="text" tabindex="6" required>
+    </fieldset>
+    <fieldset>
+      <p id="selectp">请选择案件类型：</p>
+      <select placeholder="请选择事件类型" type="select" tabindex="4" required>
+      <option class="def" value="">请选择</option>
+      <option value="">扒窃</option>
+      <option value="">抢劫</option>
+      <option value="">伤人</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <textarea id="detail" placeholder="请描述您看到的情况" tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="incident-submit" onclick="submitAlert()" data-submit="...上传中">上传</button>
+      <button name="submit" type="submit" id="incident-submit" onclick="hideUpload()">取消</button>
+    </fieldset>
+  </form>
+  
+</div>
 	</body>
 </html>
