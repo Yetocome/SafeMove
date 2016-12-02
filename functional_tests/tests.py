@@ -7,7 +7,7 @@ import time
 class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
-        self.browser = webdriver.Chrome('/Users/xmh/Desktop/python3/chromedriver')
+        self.browser = webdriver.Chrome()
         self.browser.implicitly_wait(3)
 
     def tearDown(self):
@@ -48,3 +48,22 @@ class NewVisitorTest(LiveServerTestCase):
         # form.summit()
 
         time.sleep(3)
+
+class EventVisualizationTest(LiveServerTestCase):
+
+    def setUp(self):
+        self.browser = webdriver.Chrome()
+        self.browser.implicitly_wait(3)
+
+    def tearDown(self):
+        time.sleep(10)
+        self.browser.quit()
+
+    def test_random_generate_10000_events_in_chengdu(self):
+        pass
+
+    def test_random_generate_100000_events_in_chengdu(self):
+        pass
+
+    def test_random_generate_1000000_events_in_chengdu(self):
+        pass

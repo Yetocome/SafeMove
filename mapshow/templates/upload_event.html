@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>upload demo</title>
+
+    <link rel="stylesheet" href="css/upload-style.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <div class="container">
+  <form id="contact" action="" method="post">
+    {% csrf_token %}
+    <h3>上传安全事件</h3>
+    <h4>上传您看到或经历的安全事件</h4>
+    <fieldset>
+        <input name="name" placeholder="姓名" id="name_id" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+        <input name="email" placeholder="电子邮箱" id="email_id" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+        <input name="phone_number" placeholder="电话号码" id="tel_id" type="tel" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <p id="selectp">请选择案件类型：</p>
+      <select name="event_type" placeholder="请选择事件类型" id="event_type_id" type="select" tabindex="4" required>
+      <option class="def" value="">请选择</option>
+      <option value="0">扒窃</option>
+      <option value="1">抢劫</option>
+      <option value="2">伤人</option>
+      </select>
+    </fieldset>
+    <fieldset>
+        <textarea name="description" placeholder="请描述您看到的情况" id="description_id" tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="incident_submit" data-submit="...上传中">上传</button>
+    </fieldset>
+  </form>
+
+</div>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+
+</html>

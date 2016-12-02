@@ -9,6 +9,6 @@ class VisitorEvent(models.Model):
     email = models.TextField(default='')
     event_type = models.IntegerField(default=0)
 
-    # 使用.objects.get()方法查询出来的结果将会包括姓名信息
+    # 使用.objects.get()方法查询出来的结果将会包括姓名信息，admin中也是这样
     def __str__(self):
         return self.name
