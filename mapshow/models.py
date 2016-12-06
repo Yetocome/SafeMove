@@ -16,8 +16,8 @@ class VisitorEvent(models.Model):
 
 class VisualData(models.Model):
     count = models.IntegerField()
-    lng = models.FloatField()
-    lat = models.FloatField()
+    lng = models.CharField(max_length=100)
+    lat = models.CharField(max_length=100)
     tag = models.IntegerField(default=0)
     def __str__(self):
-        return str(self.lat)+' '+str(self.lng)
+        return self.lat+' '+self.lng
