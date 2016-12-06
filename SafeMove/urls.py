@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', mapshow_views.safemap, name='safemap'),
     url(r'^upload_event/$', mapshow_views.upload_event, name='upload_event'),
+    url(r'^visdata/(\d+)/$', mapshow_views.raw_data_json, name='raw_data')
 ]

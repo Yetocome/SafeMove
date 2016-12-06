@@ -8,7 +8,16 @@ class VisitorEvent(models.Model):
     description = models.TextField(default='')
     email = models.TextField(default='')
     event_type = models.IntegerField(default=0)
+    # date = models.DateTimeField(auto_now=True)
 
     # 使用.objects.get()方法查询出来的结果将会包括姓名信息，admin中也是这样
     def __str__(self):
         return self.name
+
+class VisualData(models.Model):
+    count = models.IntegerField()
+    lng = models.FloatField()
+    lat = models.FloatField()
+    tag = models.IntegerField(default=0)
+    def __str__(self):
+        return str(self.lat)+' '+str(self.lng)

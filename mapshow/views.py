@@ -1,6 +1,14 @@
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
-from mapshow.models import VisitorEvent
+from django.http import HttpResponse, JsonResponse
+from mapshow.models import VisitorEvent, VisualData
+from django.views.decorators.http import require_GET
+
+def my_serialize(_from_models):
+    a = []
+    for k in _from_models:
+        a.append(k)
+    return a
+
 
 # Create your views here.
 def safemap(request):
@@ -19,3 +27,9 @@ def upload_event(request):
         return redirect('/')
 
     return render(request, 'upload_event.html')
+
+@require_GET
+def raw_data_json(request, t):
+    data = VisualData.objects.filter(tag=t)
+    sift_data = data.values('count', 'lat', 'lng')
+    return JsonResponse(my_serialize(sift_data), safe=False)
